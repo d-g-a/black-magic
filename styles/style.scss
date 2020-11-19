@@ -66,6 +66,10 @@ nav {
    .navContainer{
        @include flexRow();
        justify-content: space-between;
+
+       a:hover{
+           color: $orangeBtn;
+       }
    }
 
    .logoContainer .logo{

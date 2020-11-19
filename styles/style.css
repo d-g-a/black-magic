@@ -73,6 +73,10 @@ nav .navContainer {
           justify-content: space-between;
 }
 
+nav .navContainer a:hover {
+  color: #ff8d58;
+}
+
 nav .logoContainer .logo {
   width: 24px;
 }

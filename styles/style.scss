@@ -1,0 +1,289 @@
+@import './global';
+@import './variables';
+@import './typefaces';
+
+// MIXINS
+
+@mixin mainType($family,$weight) {
+    font-family: $family;
+    font-weight: $weight;
+}
+
+@mixin flexRow() {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+@mixin flexColumn() {
+    display: flex;
+    flex-direction: column;
+}
+
+// VARIABLES 
+
+$mainType: Spartan;
+$subType: Cousine;
+
+$bold: 700;
+$regular: 400;
+
+$white: #ffffff;
+$textBlack: #343036;
+$hrColor: #ededee;
+
+$grayOne: #97959a;
+$grayBackground: #fafafe;
+
+$purpleOne: #beb9d3;
+$purpleTwo: #5c22d1;
+$purpleGradient: linear-gradient( #5b28d1, #4a61d6);
+
+$orangeBtn: #ff8d58;
+
+// STYLES
+
+body{
+   margin: 80px;
+   height: 100vh;
+   background-image: url("/images/background.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   @include mainType($mainType,$regular)
+}
+
+nav {
+   @include mainType($mainType,$bold);
+   color: $white;
+   font-size: 10px;
+   @include flexRow();
+   justify-content: space-between;
+
+   a{
+       color: $white;
+   }
+
+   .navContainer{
+       @include flexRow();
+       justify-content: space-between;
+   }
+
+   .logoContainer .logo{
+    width: 24px;
+}
+   
+    .menuContainer ul{
+        @include flexRow();
+        margin-right: 80px;
+
+        li{
+            margin-right: 32px;
+        }
+    }
+
+    .sessionContainer ul{
+        @include flexRow();
+
+        :nth-child(2){
+            padding:  24px 32px;
+            margin-left: 32px;
+            border-radius: 100px;
+            background-color: #5e44d5;
+        }
+
+    }
+}
+
+.mainTitleContainer{
+
+    margin: 200px 0;
+    width: 45%;
+
+    .subTitle>h5{
+        @include mainType($subType,$bold);
+        color: $grayOne;
+        font-size: 10px;
+        padding-bottom: 24px;
+    }
+
+    .mainTitle>h2{
+        @include mainType($mainType,$regular);
+        color: $textBlack;
+        line-height: 1.5;
+        padding-bottom: 40px;
+
+        span{
+            @include mainType($mainType,$bold );
+        }
+
+    }
+
+    form{
+
+        @include flexRow();
+
+        input{
+            width: 100%;
+            flex-grow:2;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 20px;
+            &::placeholder{
+                font-size: 10px;
+            }
+
+            &:focus{
+                outline: none;
+            }
+        }
+
+        a{
+            background-color: $orangeBtn;
+            border-radius: 100%;
+            @include flexRow();
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .search{
+            width: 12px;
+            padding: 12px;
+
+            &:hover{
+                background-color: $purpleTwo;
+                border-radius: 100%;
+            }
+        }
+    }
+    
+}
+
+.jobContainer{
+
+    margin: 200px 0;
+    @include flexColumn();
+
+    h5{
+        @include mainType($subType,$bold);
+        color: $grayOne;
+        font-size: 10px;
+        padding-bottom: 16px;
+    }
+
+    .cardsContainer{
+        @include flexRow();
+    }
+
+        .card {
+
+            background-color: $white;
+            width: 200px;
+            height: 400px;
+            border-radius: 4px;
+            display: inline;
+            @include flexColumn();
+            margin-right: 64px;
+
+        .cardInfo {
+            padding: 0 16px;
+
+            .brandLogo {
+                @include flexColumn();
+                justify-content: center;
+                align-items: center;
+                height: 120px;
+                
+    
+                img{
+                    width: 64px;
+                    padding: 32px;
+                    object-fit: cover;
+                }
+            }
+    
+            hr{
+                border: none;
+                border-bottom: 1px $grayOne solid;
+            }
+
+            .cardText{
+                @include flexColumn();
+                justify-content: flex-start;
+                align-items: flex-start;      
+    
+                h5{
+                    @include mainType($mainType,$bold);
+                    color: $textBlack;
+                    font-size: 8px;
+                    padding: 24px 0;
+                }
+    
+                p{
+                    @include mainType($mainType,$bold);
+                    color: $grayOne;
+                    font-size: 8px;
+                    padding-bottom: 12px;
+                }
+
+                .cardAddress{
+
+                    @include flexRow();
+                    padding-bottom: 24px;
+
+                    .location{
+                        width: 12px;
+                    }
+
+                    h6{
+                        @include mainType($mainType,$regular);
+                        color: $grayOne;
+                        font-size: 8px;
+                    }
+            }
+        }
+    }
+
+        .cardPrice { 
+            background-color: $grayBackground;
+            padding: 32px 16px;
+            @include flexRow();
+            justify-content: space-between;
+            height: 40px;
+
+            .priceContainer{
+
+                p{
+                    @include mainType($mainType,$regular);
+                    font-size: 12px;
+                    color: $purpleTwo;
+                    padding-bottom: 10px;
+                }
+
+                h6{
+                    @include mainType($mainType,$regular );
+                    color: $purpleOne;
+                    font-size: 8px;
+                }
+            }
+
+            img{
+                width: 12px;
+                padding: 12px;
+                border: 1px $grayOne solid;
+                border-radius: 100%;
+
+                &:hover{
+                    background-color:$purpleTwo;
+                    width: 14px;
+                    padding: 14px;
+                    border: none;
+                }
+            }
+        }
+
+               
+    }
+}
+
+

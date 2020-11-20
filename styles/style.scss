@@ -61,7 +61,7 @@ nav {
 .mainTitleContainer{
 
     margin: 200px 0;
-    width: 45%;
+    width: 55%;
 
     .subTitle>h5{
         @include mainType($subType,$bold);
@@ -87,7 +87,7 @@ nav {
         position: absolute;
 
         input{
-            width: 400px;
+            width: 480px;
             flex-grow:2;
             border: none;
             padding: 16px 32px;
@@ -103,8 +103,8 @@ nav {
 
         a{
             position: absolute; 
-            top: 0; 
-            right: 0px; 
+            top: 6px; 
+            right: 10px; 
             background-color: $orangeBtn;
             border-radius: 100%;
             @include flexRow();

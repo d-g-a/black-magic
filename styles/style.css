@@ -121,7 +121,7 @@ nav .sessionContainer ul :nth-child(2) {
 
 .mainTitleContainer {
   margin: 200px 0;
-  width: 45%;
+  width: 55%;
 }
 
 .mainTitleContainer .subTitle > h5 {
@@ -160,7 +160,7 @@ nav .sessionContainer ul :nth-child(2) {
 }
 
 .mainTitleContainer form input {
-  width: 400px;
+  width: 480px;
   -webkit-box-flex: 2;
       -ms-flex-positive: 2;
           flex-grow: 2;
@@ -191,8 +191,8 @@ nav .sessionContainer ul :nth-child(2) {
 
 .mainTitleContainer form a {
   position: absolute;
-  top: 0;
-  right: 0px;
+  top: 6px;
+  right: 10px;
   background-color: #ff8d58;
   border-radius: 100%;
   display: -webkit-box;

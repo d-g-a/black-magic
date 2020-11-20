@@ -1,47 +1,7 @@
 @import './global';
 @import './variables';
 @import './typefaces';
-
-// MIXINS
-
-@mixin mainType($family,$weight) {
-    font-family: $family;
-    font-weight: $weight;
-}
-
-@mixin flexRow() {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-@mixin flexColumn() {
-    display: flex;
-    flex-direction: column;
-}
-
-// VARIABLES 
-
-$mainType: Spartan;
-$subType: Cousine;
-
-$bold: 700;
-$regular: 400;
-
-$white: #ffffff;
-$textBlack: #343036;
-$hrColor: #ededee;
-
-$grayOne: #97959a;
-$grayBackground: #fafafe;
-
-$purpleOne: #beb9d3;
-$purpleTwo: #5c22d1;
-$purpleGradient: linear-gradient( #5b28d1, #4a61d6);
-
-$orangeBtn: #ff8d58;
-
-// STYLES
+@import './mixins';
 
 body{
    margin: 80px;
@@ -119,15 +79,15 @@ nav {
         span{
             @include mainType($mainType,$bold );
         }
-
     }
 
     form{
 
         @include flexRow();
+        position: absolute;
 
         input{
-            width: 100%;
+            width: 400px;
             flex-grow:2;
             border: none;
             padding: 16px 32px;
@@ -142,12 +102,12 @@ nav {
         }
 
         a{
+            position: absolute; 
+            top: 0; 
+            right: 0px; 
             background-color: $orangeBtn;
             border-radius: 100%;
             @include flexRow();
-            justify-content: center;
-            align-items: center;
-            
         }
 
         .search{
@@ -285,8 +245,7 @@ nav {
                 }
             }
         }
-
-               
+           
     }
 }
 
